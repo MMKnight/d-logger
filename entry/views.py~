@@ -1,0 +1,19 @@
+from django.shortcuts import render
+from django.views import generic
+from .models import Entry
+# TODO: Add form and user auth
+# Create your views here.
+class IndexView(generic.ListView):
+    context_object_name = 'entries'
+    model = Entry
+    template_name = 'entry/index.html'
+class DisplayEntry(generic.DetailView):
+    model = Entry
+    template_name = 'entry/detail.html'
+class CreateEntry(generic.TemplateView):
+    template_name = 'entry_form.html'
+class NewEntry(generic.View):
+    def post(self,request, *args, **kwargs):
+        NewEntry = Entry.objects.create(
+            title = request.POST['title'],
+            content = request.

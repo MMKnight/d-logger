@@ -1,12 +1,12 @@
 from django.db import models
 from django.urls import reverse
-import  django.contrib.postgres.fields as postgres
+from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
 # Create your models here.
 class Entry(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField(max_length=1300)
-    tags = postgres.ArrayField(models.CharField(max_length=12),size=5,null = False)
+    tags = TaggableManager()
     created_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True)
     writer = models.ForeignKey(User,null=True,on_delete=models.CASCADE)

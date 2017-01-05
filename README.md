@@ -2,9 +2,7 @@
 Dev-Logger using Django.
 
 Requirement:
- - Python 3
- - Server(You need it.)
- - Working Postgresql server(I use ArrayField now)
- - Template (I won't provide templates but template guideline instead)
+ - Python 3 with django installed.
+ - Working database
 
 Don't use it now. It's WIP.

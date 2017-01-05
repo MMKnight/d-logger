@@ -52,10 +52,6 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-*/templates/
-*/static/
-static/
-templates/
 manage.py
 dlog/settings.py
 # Flask stuff:
